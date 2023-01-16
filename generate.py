@@ -98,7 +98,12 @@ def main():
     model_counter = defaultdict(int)
 
     print('Generating...')
+
     for it, data in enumerate(tqdm(test_loader)):
+
+
+        print(it)
+        print(data)
 
         # Output folders
         mesh_dir = os.path.join(generation_dir, 'meshes')
