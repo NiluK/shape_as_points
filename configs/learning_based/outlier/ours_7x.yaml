@@ -2,7 +2,7 @@ data:
   class: null
   data_type: psr_full
   input_type: pointcloud
-  path: data/shapenet_psr
+  path: data/demo/input_bench
   num_gt_points: 10000
   num_offset: 7
   pointcloud_n: 3000
