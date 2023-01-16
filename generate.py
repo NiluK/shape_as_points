@@ -43,8 +43,16 @@ def main():
     assert(float(torch.__version__.split('.')[-3]) > 0)
 
     dataset = config.get_dataset('test', cfg, return_idx=True)
+
+    print(dataset)
+
     test_loader = torch.utils.data.DataLoader(
         dataset, batch_size=1, num_workers=0, shuffle=False)
+
+    print(test_loader)
+
+    print('Loading model...')
+    
 
     model = Encode2Points(cfg).to(device)
     
