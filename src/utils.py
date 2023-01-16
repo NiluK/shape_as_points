@@ -368,6 +368,7 @@ def verts_on_largest_mesh(verts, faces):
 
 def load_pointcloud(in_file):
     plydata = PlyData.read(in_file)
+    print(plydata)
     vertices = np.stack([
         plydata['vertex']['x'],
         plydata['vertex']['y'],
