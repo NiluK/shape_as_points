@@ -35,7 +35,7 @@ model:
 train:
   batch_size: 32
   lr: 5e-4
-  out_dir: out/shapenet/outlier_ours_7x
+  out_dir: out/shapenet/outlier_ours_input_bench
   w_psr: 1
   model_selection_metric: psr_l2
   print_every: 100
