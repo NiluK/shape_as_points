@@ -93,9 +93,9 @@ def main():
             vertices = np.stack([plydata['vertex']['x'],
                                     plydata['vertex']['y'],
                                     plydata['vertex']['z']], axis=1)
-            # normals = np.stack([plydata['vertex']['nx'],
-            #                     plydata['vertex']['ny'],
-            #                     plydata['vertex']['nz']], axis=1)
+            normals = np.stack([plydata['vertex']['nx'],
+                                plydata['vertex']['ny'],
+                                plydata['vertex']['nz']], axis=1)
             N = vertices.shape[0]
             center = vertices.mean(0)
             scale = np.max(np.max(np.abs(vertices - center), axis=0))
@@ -113,7 +113,7 @@ def main():
             scale = torch.from_numpy(np.array([scale]))
 
         data = {'target_points': target_pts,
-                # 'target_normals': target_normals, # normals are never used
+                'target_normals': target_normals, # normals are never used
                 'gt_mesh': mesh}
 
     else:

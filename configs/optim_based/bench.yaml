@@ -1,7 +1,7 @@
 data:
   class: 'only_pcl'
   data_type: point
-  data_path: 'input/bench.ply'
+  data_path: 'input/bench.npyx'
   object_id: 0
   num_points: 20000
 model:
@@ -15,7 +15,7 @@ train:
       interval: 700
       factor: 0.5
       final: 1e-3
-  out_dir:  out/input_bench
+  out_dir:  out/npy_bench
   w_chamfer: 1
   n_sup_point: 20000
   batch_size: 1
