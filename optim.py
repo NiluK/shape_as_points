@@ -115,11 +115,13 @@ def main():
 
         if not torch.is_tensor(center):
             center = torch.from_numpy(center)
+            target_pts = torch.tensor(center, device=device)[None].float()
+
         if not torch.is_tensor(scale):
             scale = torch.from_numpy(np.array([scale]))
 
         data = {'target_points': target_pts,
-                'target_normals': target_normals, # normals are never used
+                # 'target_normals': target_normals, # normals are never used
                 'gt_mesh': mesh}
 
     else:
