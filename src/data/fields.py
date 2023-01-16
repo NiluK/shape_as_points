@@ -92,6 +92,8 @@ class PointCloudField(Field):
 
         pointcloud_dict = np.load(file_path)
 
+        print('pointcloud_dict', pointcloud_dict.keys())
+
         points = pointcloud_dict['points'].astype(np.float32)
         normals = pointcloud_dict['normals'].astype(np.float32)
         
