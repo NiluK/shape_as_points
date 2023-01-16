@@ -89,12 +89,12 @@ def main():
                                             num_samples=200000, return_normals=True)
         elif ext == 'ply': # only have the point cloud
             plydata = PlyData.read(data_path)
-            vertices = np.stack([plydata['vertex']['x'],
-                                    plydata['vertex']['y'],
-                                    plydata['vertex']['z']], axis=1)
-            normals = np.stack([plydata['vertex']['nx'],
-                                plydata['vertex']['ny'],
-                                plydata['vertex']['nz']], axis=1)
+            vertices = np.stack([plydata['coords']['x'],
+                                    plydata['coords']['y'],
+                                    plydata['coords']['z']], axis=1)
+            normals = np.stack([plydata['coords']['nx'],
+                                plydata['coords']['ny'],
+                                plydata['coords']['nz']], axis=1)
             N = vertices.shape[0]
             center = vertices.mean(0)
             scale = np.max(np.max(np.abs(vertices - center), axis=0))
