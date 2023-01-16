@@ -1,7 +1,7 @@
 
 inherit_from: configs/learning_based/outlier/ours_7x.yaml
 data:
-  class: ['']
+  class: "only_pcl"
   path: data/demo/input_bench
 train:
   out_dir: out/demo_shapenet_bench
