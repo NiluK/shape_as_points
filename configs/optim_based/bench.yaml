@@ -1,7 +1,7 @@
 data:
   class: 'only_pcl'
   data_type: point
-  data_path: 'input/bench.npz'
+  data_path: 'input/bench.plz'
   object_id: 0
   num_points: 20000
 model:
