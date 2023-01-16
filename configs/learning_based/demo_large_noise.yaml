@@ -1,7 +1,7 @@
 
 inherit_from: configs/learning_based/noise_large/ours.yaml
 data:
-  class: "learning_based"
+  class: null
   path: input/bench
 train:
   out_dir: out/input/noise/bench
