@@ -75,11 +75,11 @@ def main():
             print('Data loaded')
         ext = data_path.split('.')[-1]
         print('Data path: %s' % data_path)
-        print(cfg['data']['center_path'])
-        print(cfg['data']['scale_path'])
+        # print(cfg['data']['center_path'])
+        # print(cfg['data']['scale_path'])
         print(cfg['data'])
-        center = np.load(cfg['data']['center_path'])
-        scale = np.load(cfg['data']['scale_path'])
+        center = np.load(cfg['data']['data_path'])
+        scale = np.load(cfg['data']['data_path'])
         if ext == 'obj': # have GT mesh
             mesh = load_objs_as_meshes([data_path], device=device)
             # scale the mesh into unit cube
