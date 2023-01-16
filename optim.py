@@ -116,6 +116,7 @@ def main():
         if not torch.is_tensor(center):
             center = torch.from_numpy(center)
             target_pts = torch.tensor(center, device=device)[None].float()
+            mesh = None # no GT mesh
 
         if not torch.is_tensor(scale):
             scale = torch.from_numpy(np.array([scale]))
