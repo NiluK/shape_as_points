@@ -1,0 +1,9 @@
+
+inherit_from: configs/learning_based/noise_large/ours.yaml
+data:
+  class: ['']
+  path: data/demo/input_bench
+train:
+  out_dir: out/demo_input_bench_test
+test:
+  model_file: https://s3.eu-central-1.amazonaws.com/avg-projects/shape_as_points/models/ours_noise_025.pt
