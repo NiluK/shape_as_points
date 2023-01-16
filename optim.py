@@ -89,7 +89,6 @@ def main():
                                             num_samples=200000, return_normals=True)
         elif ext == 'ply': # only have the point cloud
             plydata = PlyData.read(data_path)
-            print(plydata)
             vertices = np.stack([plydata['vertex']['x'],
                                     plydata['vertex']['y'],
                                     plydata['vertex']['z']], axis=1)
@@ -104,13 +103,13 @@ def main():
             vertices *= 0.9
 
             target_pts = torch.tensor(vertices, device=device)[None].float()
-            # target_normals = torch.tensor(normals, device=device)[None].float()
+            target_normals = torch.tensor(normals, device=device)[None].float()
             mesh = None # no GT mesh
 
-        if not torch.is_tensor(data_type):
-            print(cfg['data'])
-            center = torch.from_numpy(cfg['data'])
-            scale = torch.from_numpy(np.array([cfg['data']]))
+        if not torch.is_tensor(center):
+            center = torch.from_numpy(center)
+        if not torch.is_tensor(scale):
+            scale = torch.from_numpy(np.array([scale]))
 
         data = {'target_points': target_pts,
                 'target_normals': target_normals, # normals are never used
