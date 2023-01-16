@@ -108,8 +108,9 @@ def main():
             mesh = None # no GT mesh
 
         if not torch.is_tensor(data_type):
-            center = torch.from_numpy(center)
-            scale = torch.from_numpy(np.array([scale]))
+            print(cfg['data'])
+            center = torch.from_numpy(cfg['data'])
+            scale = torch.from_numpy(np.array([cfg['data']]))
 
         data = {'target_points': target_pts,
                 'target_normals': target_normals, # normals are never used
