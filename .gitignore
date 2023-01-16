@@ -15,9 +15,9 @@
 .nfs*
 *.jpg
 *.png
-*.ply
+# *.ply
 *.off
-*.npz
+# *.npz
 *.txt
 # *.sh
 
