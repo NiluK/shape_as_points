@@ -56,6 +56,7 @@ def main():
         os.makedirs(tblogdir)
     writer = SummaryWriter(log_dir=tblogdir)
 
+
     # initialize o3d visualizer
     vis = None
     if cfg['train']['o3d_show']:
@@ -73,6 +74,8 @@ def main():
             data_path = cfg['data']['data_path']
             print('Data loaded')
         ext = data_path.split('.')[-1]
+        center = None
+        scale = None
         if ext == 'obj': # have GT mesh
             mesh = load_objs_as_meshes([data_path], device=device)
             # scale the mesh into unit cube
