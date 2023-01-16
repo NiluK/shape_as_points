@@ -113,7 +113,7 @@ def main():
             scale = torch.from_numpy(np.array([scale]))
 
         data = {'target_points': target_pts,
-                'target_normals': target_normals, # normals are never used
+                # 'target_normals': target_normals, # normals are never used
                 'gt_mesh': mesh}
 
     else:
