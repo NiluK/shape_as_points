@@ -93,9 +93,9 @@ def main():
             vertices = np.stack([plydata['vertex']['x'],
                                     plydata['vertex']['y'],
                                     plydata['vertex']['z']], axis=1)
-            normals = np.stack([plydata['vertex']['nx'],
-                                plydata['vertex']['ny'],
-                                plydata['vertex']['nz']], axis=1)
+            # normals = np.stack([plydata['vertex']['nx'],
+            #                     plydata['vertex']['ny'],
+            #                     plydata['vertex']['nz']], axis=1)
             N = vertices.shape[0]
             center = vertices.mean(0)
             scale = np.max(np.max(np.abs(vertices - center), axis=0))
@@ -104,7 +104,7 @@ def main():
             vertices *= 0.9
 
             target_pts = torch.tensor(vertices, device=device)[None].float()
-            target_normals = torch.tensor(normals, device=device)[None].float()
+            # target_normals = torch.tensor(normals, device=device)[None].float()
             mesh = None # no GT mesh
 
         if not torch.is_tensor(center):
